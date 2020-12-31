@@ -1,0 +1,45 @@
+<!-- cara import packageses :  -->
+import constantName from "packageName";
+
+<!-- misal mau ambil package chalk :  -->
+import chalk from "chalk";
+console.log(chalk.yellow("Hello World")); <!--tulisan warna kuning-->
+console.log(chalk.bgCyan("Hello World")); <!--Change the background color of the output -->
+
+<!-- 
+Importing the readline-sync package, you will be able to enter values in the console and use those values in your program. -->
+import readlineSync from "readline-sync"; 
+readlineSync.question("Enter your name: "); 
+
+<!-- atau.... -->
+import readlineSync from "readline-sync"; 
+const name = readlineSync.question("Enter your name"); 
+console.log(`${name} was entered`);
+
+<!-- buat masukin integer -->
+import readlineSync from "readline-sync"; 
+const name = readlineSync.question("Enter your name"); 
+const age = readlineSync.questionInt("Enter your age"); <!--ini khusus integer-->
+console.log(`${name} was entered`);
+
+<!-- CONTOH LENGKAP line 25-45-->
+<!--  Import readline-sync -->
+import readlineSync from "readline-sync";
+
+import Dog from "../class/dog";
+
+const dog1 = new Dog("Leo", 4, "Chihuahua");
+
+ <!-- Rewrite using readlineSync.question -->
+const name = readlineSync.question("Enter your name: ");
+console.log('${name} was entered');
+
+ <!-- Rewrite using readlineSync.questionInt -->
+const age = readlineSync.questionInt("Enter your age: ");
+
+ <!-- Rewrite using readlineSync.question -->
+const breed = readlineSync.question("Enter your breed: ");
+
+const dog2 = new Dog(name, age, breed);
+
+export { dog1, dog2 };
